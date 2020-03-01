@@ -7,15 +7,17 @@
     android:focusableInTouchMode="true"
     android:background="@color/colorPrimary"
     tools:context=".LoginPage">
+
     <ImageView
         android:id="@+id/enterId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-           app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.557"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputEditText2"
         app:srcCompat="@drawable/login" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="141dp"
@@ -47,46 +49,48 @@
         app:layout_constraintVertical_bias="0.631" />
 
     <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputEditText4"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="344dp"
         android:drawableLeft="@drawable/ic_email_white_24dp"
         android:ems="10"
-        android:textColor="#FFFFFF"
         android:hint=" البريد الالكتروني "
+        android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.442"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="80dp"
-        android:layout_marginRight="80dp"
-        android:layout_marginBottom="32dp"
-        android:text="ليس لديك حساب ؟"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
+        android:orientation="horizontal"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enterId"
-        app:layout_constraintVertical_bias="0.984" />
+       >
+        <TextView
+            android:id="@+id/RegisterPageTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" انشئ حساب جديد ؟"
+            android:layout_marginRight="10dp"
+            android:textColor="#FFEDB5"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ليس لديك حساب ؟"
 
-    <TextView
-        android:id="@+id/RegisterPageTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:text=" انشئ حساب جديد ؟"
-        android:textColor="#FFEDB5"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView"
-        app:layout_constraintHorizontal_bias="0.915"
-        app:layout_constraintStart_toStartOf="parent" />
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

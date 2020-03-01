@@ -31,7 +31,7 @@
         app:layout_constraintHorizontal_bias="0.971"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/dashboard" />
+        app:srcCompat="@drawable/dashboard_d" />
 
     <ScrollView
         android:id="@+id/scrollView2"

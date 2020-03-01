@@ -4,9 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    android:background="@drawable/back"
+    android:background=" #EDEFE3"
     tools:context=".ActivityCategory">
+
+    <ImageView
+        android:id="@+id/rectangleId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/back_with_pic"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/backId"
@@ -30,29 +40,25 @@
         app:layout_constraintHorizontal_bias="0.971"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/dashboard" />
+        app:srcCompat="@drawable/dashboard_d" />
 
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="415dp"
+        android:layout_height="400dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-        <ImageView
-            android:id="@+id/backGId"
-            android:layout_width="match_parent"
-            android:layout_height="235dp"
-            android:src="@drawable/backg" />
+        app:layout_constraintTop_toBottomOf="@+id/rectangleId">
+
         <ListView
-            android:divider="@null"
-            android:dividerHeight="0dp"
             android:id="@+id/lvId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:divider="@null"
+            android:dividerHeight="0dp"
             android:scrollbars="horizontal" />
 
 

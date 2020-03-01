@@ -41,7 +41,7 @@ android:fillViewport="true"
                 android:paddingTop="15dp"
                 android:paddingEnd="10dp"
                 android:paddingRight="10dp"
-                android:src="@drawable/dashboard" />
+                android:src="@drawable/dashboard_d" />
                 </RelativeLayout>
                     <TextView
             android:layout_width="128dp"

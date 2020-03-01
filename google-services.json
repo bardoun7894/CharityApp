@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "963398184206",
+    "firebase_url": "https://saudidashboard.firebaseio.com",
+    "project_id": "saudidashboard",
+    "storage_bucket": "saudidashboard.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:963398184206:android:3d38d9d6f1c0eb13bcbb5f",
+        "android_client_info": {
+          "package_name": "com.example.charityapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "963398184206-pkhle6j6gu9lvocnhuvkspjav3pejr44.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpDwPefQRxe0BFP5S5pIcdZW459DxpqIw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "963398184206-pkhle6j6gu9lvocnhuvkspjav3pejr44.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

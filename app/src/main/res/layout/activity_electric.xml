@@ -25,15 +25,15 @@
 
     <ImageView
         android:id="@+id/dashbordId"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="19dp"
+        android:layout_height="13dp"
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.971"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/dashboard" />
+        app:srcCompat="@drawable/dashboard_d" />
 
     <ScrollView
         android:id="@+id/scrollView2"

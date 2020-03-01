@@ -35,7 +35,7 @@
             android:layout_toEndOf="@+id/backId"
             android:layout_toRightOf="@+id/backId"
             android:paddingTop="15dp"
-            android:src="@drawable/dashboard"
+            android:src="@drawable/dashboard_d"
             android:paddingLeft="10dp" />
     </RelativeLayout>
 <GridLayout

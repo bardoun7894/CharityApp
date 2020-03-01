@@ -14,8 +14,8 @@ import android.widget.ListView;
 public class ActivityCategory extends AppCompatActivity {
     ListView lv;
     int[] images = {
-          R.drawable.fourni, R.drawable.clothes, R.drawable.foods, R.drawable.about,
-            R.drawable.books, R.drawable.awani, R.drawable.shoes, R.drawable.money, R.drawable.childreen_tool,
+          R.drawable.fourniture, R.drawable.clothes_new, R.drawable.foods_new,R.drawable.about_new,
+            R.drawable.books_new, R.drawable.awani_new, R.drawable.shoes_new, R.drawable.money_new, R.drawable.childreen_tool,
     };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
