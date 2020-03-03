@@ -15,7 +15,7 @@ public class ActivityCategory extends AppCompatActivity {
     ListView lv;
     int[] images = {
           R.drawable.fourniture, R.drawable.clothes_new, R.drawable.foods_new,R.drawable.about_new,
-            R.drawable.books_new, R.drawable.awani_new, R.drawable.shoes_new, R.drawable.money_new, R.drawable.childreen_tool,
+            R.drawable.books_new, R.drawable.awani_new, R.drawable.shoes_new, R.drawable.baby_new, R.drawable.others,
     };
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -15,7 +15,7 @@
          app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.557"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputEditText2"
+        app:layout_constraintTop_toBottomOf="@+id/passwordLoginId"
         app:srcCompat="@drawable/login" />
 
     <ImageView
@@ -32,7 +32,7 @@
         app:srcCompat="@drawable/charity" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText2"
+        android:id="@+id/passwordLoginId"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="412dp"
@@ -41,7 +41,7 @@
         android:inputType="textPassword"
         android:textColorHint="#F6F6F6"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/textInputEditText"
+        app:layout_constraintBottom_toTopOf="@+id/rePasswordId"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,13 +49,14 @@
         app:layout_constraintVertical_bias="0.631" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText4"
+        android:id="@+id/mobileLoginId"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="344dp"
-        android:drawableLeft="@drawable/ic_email_white_24dp"
+        android:drawableLeft="@drawable/ic_phone_black_24dp"
         android:ems="10"
-        android:hint=" البريد الالكتروني "
+        android:hint=" رقم الجوال "
+        android:inputType="number"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
