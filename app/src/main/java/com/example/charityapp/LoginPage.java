@@ -13,8 +13,11 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class LoginPage extends AppCompatActivity {
     TextView createCompteTv;
@@ -22,8 +25,11 @@ public class LoginPage extends AppCompatActivity {
     EditText passwordEt;
     ImageView enterIv;
     private FirebaseAuth mauth;
-    FirebaseAuth.AuthStateListener mAuthStateListener;
-    DatabaseReference reference;
+    private DatabaseReference reference;
+    private String number;
+    private String password;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,17 +38,8 @@ public class LoginPage extends AppCompatActivity {
         enterIv=findViewById(R.id.enterId);
         numberEt=findViewById(R.id.mobileLoginId);
         passwordEt=findViewById(R.id.passwordLoginId);
-        mAuthStateListener=new FirebaseAuth.AuthStateListener() {
-            FirebaseUser userFirebase =mauth.getCurrentUser();
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-               if(userFirebase!=null){
-            Toast.makeText(LoginPage.this, getString(R.string.registration_success), Toast.LENGTH_LONG).show();
-               }else{
-             Toast.makeText(LoginPage.this, getString(R.string.registration_success), Toast.LENGTH_LONG).show();
-               }
-            }
-        };
+
+        reference=FirebaseDatabase.getInstance().getReference("credentiels");
         createCompteTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,16 +50,15 @@ public class LoginPage extends AppCompatActivity {
         enterIv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+loginBtn();
 
-                Intent intent=new Intent(getApplicationContext(),ActivityCategory.class);
-                startActivity(intent);
             }
         });
     }
 
     public void loginBtn(){
-      String number =numberEt.getText().toString().trim();
-        String password =passwordEt.getText().toString().trim();
+        number =numberEt.getText().toString().trim();
+          password =passwordEt.getText().toString().trim();
 
         if (password.isEmpty()) {
             passwordEt.setError(getString(R.string.input_error_name));
@@ -79,8 +75,30 @@ public class LoginPage extends AppCompatActivity {
             numberEt.requestFocus();
             return;
         }
-     reference=FirebaseDatabase.getInstance().getReference("Users");
-
+    reference.child("Users").child(number).addListenerForSingleValueEvent(valueEventListener);
 
     }
+        ValueEventListener valueEventListener=new ValueEventListener() {
+            @Override
+        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            if (dataSnapshot.exists()){
+                String pass=dataSnapshot.child("password").getValue(String.class);
+                System.out.println(pass+" :  mobileNum");
+                if(pass.equals(password)){
+                    Intent intent=new Intent(getApplicationContext(),ActivityCategory.class);
+                    startActivity(intent);
+             //       passwordEt.setError("هذا الرقم محجوز مسبقا");
+              //      passwordEt.requestFocus();
+                }else
+                {   Toast.makeText(LoginPage.this, "password not equal", Toast.LENGTH_SHORT).show(); }
+            }else{
+                Toast.makeText(LoginPage.this, "data not exist", Toast.LENGTH_SHORT).show();   }
+        }
+
+        @Override
+        public void onCancelled(@NonNull DatabaseError databaseError) {
+            Toast.makeText(LoginPage.this, " on cancelled ", Toast.LENGTH_SHORT).show();
+        }
+    };
+
 }

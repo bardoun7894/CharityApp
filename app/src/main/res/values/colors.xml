@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#59A869</color>
     <color name="colorAccent">#FFFFFF</color>
     <color name="textInputLayout">#96ffffff</color>
+    <color name="lemonColor"> #ffeaa7</color>
+
 </resources>

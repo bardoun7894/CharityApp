@@ -12,8 +12,6 @@
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginTop="24dp"
-
-
         android:layout_marginBottom="23dp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,8 +23,8 @@
 
     <ImageView
         android:id="@+id/dashbordId"
-        android:layout_width="19dp"
-        android:layout_height="13dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -236,7 +234,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="أدوات المطبخ"
+                            android:text="أدوات الطبخ"
                             android:textColor="@color/colorPrimary"
                             android:textSize="25sp">
 
