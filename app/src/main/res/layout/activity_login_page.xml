@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="412dp"
         android:drawableLeft="@drawable/ic_lock_white_24dp"
-        android:hint="                                                       كلمة السر"
+        android:hint="                                                        كلمة السر"
         android:inputType="textPassword"
         android:textColorHint="#F6F6F6"
         android:textColor="#FFFFFF"
@@ -55,7 +55,8 @@
         android:layout_marginTop="344dp"
         android:drawableLeft="@drawable/ic_phone_black_24dp"
         android:ems="10"
-        android:hint=" رقم الجوال "
+
+        android:hint="@string/number_phone"
         android:inputType="number"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
@@ -78,7 +79,7 @@
             android:id="@+id/RegisterPageTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" انشئ حساب جديد ؟"
+            android:text="@string/create_account"
             android:layout_marginRight="10dp"
             android:textColor="#FFEDB5"
             android:textSize="18sp" />
@@ -86,7 +87,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ليس لديك حساب ؟"
+            android:text="@string/no_account"
 
             android:textColor="#FFFFFF"
             android:textSize="18sp" />

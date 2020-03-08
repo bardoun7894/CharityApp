@@ -23,16 +23,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.HashMap;
+
 public class RegisterPage extends AppCompatActivity {
     EditText nameEt,emailEt,passwordEt,rePasswordEt,numberPhoneEt;
-    private FirebaseAuth mauth;
+
     ImageView registerbtn;
     DatabaseReference reference;
-    private String email;
-    private String password;
-    private String rePassword;
-    private String numberPhone;
-    public boolean found=false;
+    private String email,password,rePassword,numberPhone,name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,33 +50,10 @@ reference=FirebaseDatabase.getInstance().getReference("credentiels");
             }
         });
     }
-//    ValueEventListener valueEventListener=new ValueEventListener() {
-//        @Override
-//        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//            if (dataSnapshot.exists()){
-//                String numbe=dataSnapshot.child("numberPhone").getValue(String.class);
-//                System.out.println(numbe+" :  mobileNum");
-//              //  assert numbe != null;
-//                if(numbe.equals(numberPhone)){
-//                    Toast.makeText(RegisterPage.this, "number equal", Toast.LENGTH_SHORT).show();
-//                             found = true ;
-//                              //   passwordEt.setError("هذا الرقم محجوز مسبقا");
-//                              //   passwordEt.requestFocus();
-//                               }else {
-//                             found =false ;
-//                             Toast.makeText(RegisterPage.this, "number not equal", Toast.LENGTH_SHORT).show();
-//                              }
-//            }else {   Toast.makeText(RegisterPage.this, "data not exist", Toast.LENGTH_SHORT).show(); }
-//                  }
-//
-//        @Override
-//        public void onCancelled(@NonNull DatabaseError databaseError) {
-//            Toast.makeText(RegisterPage.this, " on cancelled ", Toast.LENGTH_SHORT).show();
-//        }
-//    };
+
 private void registerUser(){
 
-    String name =  nameEt.getText().toString().trim();
+   name =  nameEt.getText().toString().trim();
         email  =   emailEt.getText().toString().trim();
        password =  passwordEt.getText().toString().trim();
       rePassword = rePasswordEt.getText().toString().trim();
@@ -89,11 +64,7 @@ private void registerUser(){
         return;
     }
 
-    if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-        emailEt.setError(getString(R.string.input_error_email_invalid));
-        emailEt.requestFocus();
-        return;
-    }
+
     if (password.isEmpty()) {
         passwordEt.setError(getString(R.string.input_error_password));
         passwordEt.requestFocus();
@@ -125,37 +96,44 @@ private void registerUser(){
         return;
     }
 
-    User user =new User(name,email,password,numberPhone);
-  //  reference.child("Users").child(numberPhone).addListenerForSingleValueEvent(valueEventListener);
-//    if( found==true ){
-//    // numberPhoneEt.setBackgroundColor(getResources().getColor(R.color.lemonColor));
-//        numberPhoneEt.requestFocus();
-//        return;
-//    }else{
-//  //      numberPhoneEt.setError("الرقم غير موجود");
-//        numberPhoneEt.requestFocus();
-//    }
-    reference.child("Users").child(numberPhone).setValue(user).addOnFailureListener(new OnFailureListener() {
+     validateNumberPhone();
+}
+
+public void validateNumberPhone(){
+    reference.addListenerForSingleValueEvent(new ValueEventListener() {
         @Override
-        public void onFailure(@NonNull Exception e) {
-    Toast.makeText(RegisterPage.this, "لقد بأت العملية بالفشل ", Toast.LENGTH_SHORT).show();
+        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            if (!(dataSnapshot.child("Users").child(numberPhone)).exists()) {
+                HashMap<String,Object> userDataMap =new HashMap<>();
+                userDataMap.put("numberPhone",numberPhone);
+                userDataMap.put("name",name);
+                userDataMap.put("password",password);
+                userDataMap.put("email",email);
+reference.child("Users").child(numberPhone).updateChildren(userDataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+    @Override
+    public void onComplete(@NonNull Task<Void> task) {
+        if (task.isSuccessful()){
+            Toast.makeText(RegisterPage.this, "تم التسجيل بنجاح ", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(RegisterPage.this, "مشكل في الشبكة", Toast.LENGTH_SHORT).show();
         }
-    }).addOnSuccessListener(new OnSuccessListener<Void>() {
+    }
+});
+
+            }else{
+                numberPhoneEt.setError(" جرب رقم اخر هذا الرقم محجوز");
+                numberPhoneEt.requestFocus();
+                }
+        }
+
         @Override
-        public void onSuccess(Void aVoid) {
-            Intent intent=new Intent(getApplicationContext(),ActivityCategory.class);
-            startActivity(intent);
-    Toast.makeText(RegisterPage.this, " تم التسجيل بنجاح ", Toast.LENGTH_SHORT).show();
+        public void onCancelled(@NonNull DatabaseError databaseError) {
+            Toast.makeText(RegisterPage.this, " on cancelled ", Toast.LENGTH_SHORT).show();
+
         }
     });
 
 
-
-
-
 }
-
-
-
 
 }

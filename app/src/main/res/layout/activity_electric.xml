@@ -8,7 +8,7 @@
     tools:context=".ActivityElectric">
 
     <ImageView
-        android:id="@+id/backId"
+        android:id="@+id/backElectId"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginTop="24dp"
@@ -84,7 +84,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="مكواة"
+                            android:text="@string/iron"
                             android:textColor="@color/colorPrimary"
                             android:textSize="25sp">
 
@@ -121,7 +121,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="شاشة"
+                            android:text="@string/tv"
                             android:textColor="@color/colorPrimary"
                             android:textSize="25sp">
 
@@ -157,7 +157,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="ثلاجة"
+                            android:text="@string/refrigerator"
                             android:textColor="@color/colorPrimary"
                             android:textSize="30sp">
 
@@ -194,7 +194,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="غسالة"
+                            android:text="@string/wach_machine"
                             android:textColor="@color/colorPrimary"
                             android:textSize="25sp">
 
@@ -234,7 +234,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="أدوات الطبخ"
+                            android:text="@string/kitcheen_tools"
                             android:textColor="@color/colorPrimary"
                             android:textSize="25sp">
 
@@ -272,7 +272,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="أخرى"
+                            android:text="@string/others"
                             android:textColor="@color/colorPrimary"
                             android:textSize="25sp">
 

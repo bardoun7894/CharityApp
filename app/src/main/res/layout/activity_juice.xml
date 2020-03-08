@@ -8,7 +8,7 @@
     tools:context=".ActivityJuice">
 
     <ImageView
-        android:id="@+id/backId"
+        android:id="@+id/backFoodId"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginTop="24dp"
@@ -84,7 +84,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="خضار"
+                            android:text="@string/vegetables"
                             android:textColor="@color/colorPrimary"
                             android:textSize="25sp">
 
@@ -121,7 +121,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="مشروبات"
+                            android:text="@string/drinka"
                             android:textColor="@color/colorPrimary"
                             android:textSize="25sp">
 
@@ -157,7 +157,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="تمور"
+                            android:text="@string/dates"
                             android:textColor="@color/colorPrimary"
                             android:textSize="30sp">
 
@@ -194,7 +194,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="فواكه"
+                            android:text="@string/fruits"
                             android:textColor="@color/colorPrimary"
                             android:textSize="25sp">
 
@@ -234,7 +234,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text=" حلويات"
+                            android:text="@string/candy"
                             android:textColor="@color/colorPrimary"
                             android:textSize="25sp">
 
@@ -272,7 +272,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="أخرى"
+                            android:text="@string/others"
                             android:textColor="@color/colorPrimary"
                             android:textSize="25sp">
 

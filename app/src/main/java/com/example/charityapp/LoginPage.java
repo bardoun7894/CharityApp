@@ -19,6 +19,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import io.paperdb.Paper;
+
 public class LoginPage extends AppCompatActivity {
     TextView createCompteTv;
     EditText numberEt;
@@ -54,12 +56,13 @@ loginBtn();
 
             }
         });
+        Paper.init(this);
     }
-
-    public void loginBtn(){
+        public void loginBtn(){
         number =numberEt.getText().toString().trim();
-          password =passwordEt.getText().toString().trim();
-
+         password =passwordEt.getText().toString().trim();
+        Paper.book().write(Prevalent.UserPhoneKey,number);
+        Paper.book().write(Prevalent.UserPasswordKey,password);
         if (password.isEmpty()) {
             passwordEt.setError(getString(R.string.input_error_name));
             passwordEt.requestFocus();
@@ -78,6 +81,7 @@ loginBtn();
     reference.child("Users").child(number).addListenerForSingleValueEvent(valueEventListener);
 
     }
+
         ValueEventListener valueEventListener=new ValueEventListener() {
             @Override
         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -87,17 +91,14 @@ loginBtn();
                 if(pass.equals(password)){
                     Intent intent=new Intent(getApplicationContext(),ActivityCategory.class);
                     startActivity(intent);
-             //       passwordEt.setError("هذا الرقم محجوز مسبقا");
-              //      passwordEt.requestFocus();
                 }else
-                {   Toast.makeText(LoginPage.this, "password not equal", Toast.LENGTH_SHORT).show(); }
+                {   Toast.makeText(LoginPage.this, "كلمة السر خاطئة", Toast.LENGTH_SHORT).show(); }
             }else{
-                Toast.makeText(LoginPage.this, "data not exist", Toast.LENGTH_SHORT).show();   }
+                Toast.makeText(LoginPage.this, "هذا الحساب غير موجود", Toast.LENGTH_SHORT).show();   }
         }
-
         @Override
         public void onCancelled(@NonNull DatabaseError databaseError) {
-            Toast.makeText(LoginPage.this, " on cancelled ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginPage.this, " تم الالغاء", Toast.LENGTH_SHORT).show();
         }
     };
 

@@ -15,5 +15,32 @@
     <string name="registration_success">Registered Successfully</string>
     <string name="registration_failed">Registered Failed</string>
     <string name="input_error_email_invalid">enter a valid email</string>
+    <string name="childreen_clothes_text">ملابس أطفال من 0 الى 12 سنة</string>
+    <string name="clothes_man_text">ملابس رجال</string>
+    <string name="clothes_women_text">ملابس نساء</string>
+    <string name="shoes_man_text">أحذية رجال</string>
+    <string name="shoes_women_text">أحذية نساء</string>
+    <string name="shoes_childreen_text">أحذية أطفال من 0 الى 12 سنة</string>
+    <string name="iron">مكواة</string>
+    <string name="tv">شاشة</string>
+    <string name="refrigerator">ثلاجة</string>
+    <string name="wach_machine">غسالة</string>
+    <string name="kitcheen_tools">أدوات الطبخ</string>
+    <string name="vegetables">خضار</string>
+    <string name="drinka">مشروبات</string>
+    <string name="dates">تمور</string>
+    <string name="fruits">فواكه</string>
+    <string name="candy">حلويات</string>
+    <string name="others">أخرى</string>
+    <string name="number_phone">رقم الجوال</string>
+    <string name="create_account">انشئ حساب جديد ؟</string>
+    <string name="no_account">ليس لديك حساب ؟</string>
+    <string name="matress">فرشة</string>
+    <string name="curtain">ستار</string>
+    <string name="bed">سرير</string>
+    <string name="chair">كرسي</string>
+    <string name="sofa">كنب</string>
+    <string name="get_car">طلب سيارة</string>
+    <string name="i_delivere_it">توصيل ذاتي</string>
 
 </resources>

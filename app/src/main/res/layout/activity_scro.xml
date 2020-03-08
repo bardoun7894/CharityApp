@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/back1"
-    tools:context=".Scro">
+    tools:context=".Forniture">
 
     <ImageView
         android:id="@+id/backId"
@@ -84,7 +84,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="فرشة"
+                            android:text="@string/matress"
                             android:textColor="@color/colorPrimary"
                             android:textSize="25sp">
 
@@ -121,7 +121,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="ستار"
+                            android:text="@string/curtain"
                             android:textColor="@color/colorPrimary"
                             android:textSize="25sp">
 
@@ -157,7 +157,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="سرير"
+                            android:text="@string/bed"
                             android:textColor="@color/colorPrimary"
                             android:textSize="30sp">
 
@@ -194,7 +194,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="كرسي"
+                            android:text="@string/chair"
                             android:textColor="@color/colorPrimary"
                             android:textSize="25sp">
 
@@ -234,7 +234,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="كنب"
+                            android:text="@string/sofa"
                             android:textColor="@color/colorPrimary"
                             android:textSize="25sp">
 
@@ -272,7 +272,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="أخرى"
+                            android:text="@string/others"
                             android:textColor="@color/colorPrimary"
                             android:textSize="25sp">
 

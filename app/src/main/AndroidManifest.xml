@@ -10,12 +10,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".BabyTools"></activity>
+        <activity android:name=".donate" />
+        <activity android:name=".Shoes" />
+        <activity android:name=".Clothes" />
         <activity android:name=".ActivityCategory" />
         <activity android:name=".MainActivity" />
         <activity android:name=".LoginPage" />
         <activity android:name=".ActivityJuice" />
         <activity android:name=".ActivityElectric" />
-        <activity android:name=".Scro" />
+        <activity android:name=".Forniture" />
         <activity android:name=".SubCategories" />
         <activity android:name=".RegisterPage" />
         <activity android:name=".SplashScreen">
