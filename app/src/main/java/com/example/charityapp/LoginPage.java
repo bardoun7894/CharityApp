@@ -62,6 +62,7 @@ loginBtn();
         number =numberEt.getText().toString().trim();
          password =passwordEt.getText().toString().trim();
         Paper.book().write(Prevalent.UserPhoneKey,number);
+
         Paper.book().write(Prevalent.UserPasswordKey,password);
         if (password.isEmpty()) {
             passwordEt.setError(getString(R.string.input_error_name));

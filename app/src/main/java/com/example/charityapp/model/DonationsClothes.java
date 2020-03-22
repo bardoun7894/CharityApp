@@ -1,4 +1,4 @@
-package com.example.charityapp;
+package com.example.charityapp.model;
 
 import java.io.Serializable;
 public class DonationsClothes implements Serializable {

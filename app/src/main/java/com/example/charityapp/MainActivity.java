@@ -10,29 +10,51 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.charityapp.model.User;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import io.paperdb.Paper;
 
 public class MainActivity extends AppCompatActivity {
-ImageView donateIV ;
+ImageView donateIV ,contactIV,aboutJamIv,newsIV;
+    Intent intent;
 DatabaseReference reference;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         donateIV=findViewById(R.id.donateId);
+        contactIV=findViewById(R.id.contactId);
+        aboutJamIv=findViewById(R.id.aboutId);
+        newsIV=findViewById(R.id.newsId);
 
         reference=FirebaseDatabase.getInstance().getReference("credentiels");
         Paper.init(this);
-
+        newsIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent=new Intent(MainActivity.this,NewsActivity.class);
+                startActivity(intent);
+            }
+        });
+        aboutJamIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent=new Intent(MainActivity.this,jAAMAIYAACTIVITY.class);
+                startActivity(intent);
+            }
+        });
+        contactIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent=new Intent(MainActivity.this,ContactUsActivity.class);
+                startActivity(intent);
+            }
+        });
         donateIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,7 +64,7 @@ DatabaseReference reference;
                     if(!TextUtils.isEmpty(userPhonekey) && !TextUtils.isEmpty(userPasswordkey)){
                         AllowAccess(userPhonekey,userPasswordkey);
                     }else{
-                        Intent intent =new Intent(MainActivity.this,LoginPage.class);
+                      intent =new Intent(MainActivity.this,LoginPage.class);
                         startActivity(intent);
                         finish();
                        }
@@ -64,9 +86,9 @@ DatabaseReference reference;
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if ((dataSnapshot.child("Users").child(numberPhone)).exists()) {
                     User userdata = dataSnapshot.child("Users").child(numberPhone).getValue(User.class);
-if (userdata.getNumberPhone().equals(numberPhone)){
+         if (userdata.getNumberPhone().equals(numberPhone)){
 
-    if(userdata.getPassword().equals(password)){
+              if(userdata.getPassword().equals(password)){
         Intent intent=new Intent(getApplicationContext(),ActivityCategory.class);
             startActivity(intent);
         Toast.makeText(MainActivity.this, "exist", Toast.LENGTH_SHORT).show();

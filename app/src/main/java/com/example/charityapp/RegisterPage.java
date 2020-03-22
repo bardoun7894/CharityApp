@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.charityapp.model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -31,6 +32,8 @@ public class RegisterPage extends AppCompatActivity {
     ImageView registerbtn;
     DatabaseReference reference;
     private String email,password,rePassword,numberPhone,name;
+    private int id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,8 +56,8 @@ reference=FirebaseDatabase.getInstance().getReference("credentiels");
 
 private void registerUser(){
 
-   name =  nameEt.getText().toString().trim();
-        email  =   emailEt.getText().toString().trim();
+      name =  nameEt.getText().toString().trim();
+      email  =   emailEt.getText().toString().trim();
        password =  passwordEt.getText().toString().trim();
       rePassword = rePasswordEt.getText().toString().trim();
         numberPhone=numberPhoneEt.getText().toString().trim();
@@ -104,6 +107,7 @@ public void validateNumberPhone(){
         @Override
         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
             if (!(dataSnapshot.child("Users").child(numberPhone)).exists()) {
+
                 HashMap<String,Object> userDataMap =new HashMap<>();
                 userDataMap.put("numberPhone",numberPhone);
                 userDataMap.put("name",name);
@@ -119,7 +123,6 @@ reference.child("Users").child(numberPhone).updateChildren(userDataMap).addOnCom
         }
     }
 });
-
             }else{
                 numberPhoneEt.setError(" جرب رقم اخر هذا الرقم محجوز");
                 numberPhoneEt.requestFocus();

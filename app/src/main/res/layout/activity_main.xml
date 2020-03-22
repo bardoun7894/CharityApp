@@ -23,57 +23,63 @@
 
     <LinearLayout
         android:id="@+id/linear1"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="266dp"
         android:layout_marginBottom="50dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
 
 
         <ImageView
+            android:layout_marginStart="10dp"
             android:id="@+id/contactId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/contact_us" />
-
+            android:layout_weight="1"
+            android:layout_width="135dp"
+            android:layout_height="111dp"
+            app:srcCompat="@drawable/contact_us"
+            android:layout_marginLeft="10dp" />
         <ImageView
+            android:layout_marginStart="10dp"
             android:id="@+id/aboutId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            app:srcCompat="@drawable/about_jam" />
+            android:layout_weight="1"
+            android:layout_width="135dp"
+            android:layout_height="111dp"
+            app:srcCompat="@drawable/about_jam"
+            android:layout_marginLeft="10dp" />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="72dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
+
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
             android:id="@+id/donateId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            app:srcCompat="@drawable/tabaro3at" />
+            android:layout_weight="1"
+            android:layout_width="135dp"
+            android:layout_height="111dp"
+            app:srcCompat="@drawable/tabaro3at"
+          />
 
         <ImageView
+            android:layout_weight="1"
+
             android:id="@+id/newsId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_width="135dp"
+            android:layout_height="111dp"
+
             app:srcCompat="@drawable/news_main"
 
             />

@@ -1,10 +1,43 @@
-package com.example.charityapp;
+package com.example.charityapp.model;
+
+import com.example.charityapp.model.DonationsClothes;
+
+import java.util.ArrayList;
+import java.util.Map;
 
 public class User {
-   private String  fullname;
+    private int id ;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    private String  fullname;
     private String email;
     private String password;
     private String numberPhone;
+    private Map map;
+    private ArrayList<String> a=new ArrayList<>();
+
+    public ArrayList<String> getA() {
+        return a;
+    }
+
+    public void setA(ArrayList<String> a) {
+        this.a = a;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
     private DonationsClothes donationsClothes;
 
     public DonationsClothes getDonationsClothes() {

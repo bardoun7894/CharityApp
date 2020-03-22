@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.charityapp.model.DonationsClothes;
+
 public class Clothes extends AppCompatActivity {
 ImageView whiteChildCircle,whiteManCircle,whiteWomenCircle;
    public int[] images = {R.drawable.white_point, R.drawable.dark_point};
@@ -22,7 +24,7 @@ DonationsClothes donationsClothes;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clothes);
-         donationsClothes =new DonationsClothes(manName,womenName,childName);
+        donationsClothes =new DonationsClothes(manName,womenName,childName);
         whiteChildCircle =findViewById(R.id.pointChildId);
         whiteManCircle =findViewById(R.id.pointManId);
         whiteWomenCircle =findViewById(R.id.pointWomanId);
@@ -30,8 +32,9 @@ DonationsClothes donationsClothes;
         sureBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =new Intent(Clothes.this,donate.class);
-                Bundle extras = new Bundle();
+
+        Intent intent =new Intent(Clothes.this, CartDonations.class);
+        Bundle extras = new Bundle();
                 extras.putString("class","clothesClass");
                 extras.putSerializable("clothesSelected", donationsClothes);
                 intent.putExtras(extras);
@@ -58,9 +61,7 @@ DonationsClothes donationsClothes;
                 whiteWomenCircle.setImageResource(images[currentImage]);
                 if(currentImage==1){
                     donationsClothes.setWomenClothes(getString(R.string.clothes_women_text));
-                }else{
-                    donationsClothes.setWomenClothes("");
-                }
+                }else{ donationsClothes.setWomenClothes("");   }
             }
         });
         whiteChildCircle.setOnClickListener(new View.OnClickListener() {
@@ -70,10 +71,7 @@ DonationsClothes donationsClothes;
                 whiteChildCircle.setImageResource(images[currentImage]);
                 if(currentImage==1){
                     donationsClothes.setChildClothes(getString(R.string.childreen_clothes_text));
-                }else{
-                    donationsClothes.setChildClothes("");
-                }
-
+                }else{   donationsClothes.setChildClothes("");  }
             }
         });
 

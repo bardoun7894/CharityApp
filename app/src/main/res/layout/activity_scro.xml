@@ -6,9 +6,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/back1"
     tools:context=".Forniture">
-
     <ImageView
-        android:id="@+id/backId"
+        android:id="@+id/fourniturebackId"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginTop="24dp"
@@ -69,7 +68,7 @@
                     app:cardElevation="6dp">
 
                     <LinearLayout
-
+                   android:id="@+id/matressLnId"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
@@ -105,17 +104,16 @@
                     app:cardElevation="6dp">
 
                     <LinearLayout
+                        android:id="@+id/curtainLnId"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
                         android:orientation="vertical"
                         android:padding="28dp">
-
                         <ImageView
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:background="@drawable/curtain">
-
                         </ImageView>
 
                         <TextView
@@ -143,6 +141,7 @@
                     app:cardElevation="6dp">
 
                     <LinearLayout
+                        android:id="@+id/bedLnId"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
@@ -178,6 +177,7 @@
                     app:cardElevation="6dp">
 
                     <LinearLayout
+                        android:id="@+id/chairLnId"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
@@ -217,7 +217,7 @@
                     app:cardElevation="6dp">
 
                     <LinearLayout
-
+                        android:id="@+id/sofaLnId"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
@@ -256,6 +256,7 @@
                     app:cardElevation="6dp">
 
                     <LinearLayout
+                        android:id="@+id/otherFournitureLnId"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
