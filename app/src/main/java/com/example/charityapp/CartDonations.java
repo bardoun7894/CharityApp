@@ -239,7 +239,7 @@ btnBack=findViewById(R.id.backDonateId);
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
-                     Toast.makeText( CartDonations.this, "added .", Toast.LENGTH_SHORT).show();
+                     Toast.makeText( CartDonations.this, "تمت الاضافة بنجاح .", Toast.LENGTH_SHORT).show();
                 }
             }
         });
