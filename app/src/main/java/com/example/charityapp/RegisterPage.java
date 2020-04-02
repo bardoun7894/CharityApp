@@ -3,6 +3,7 @@ package com.example.charityapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -34,6 +35,7 @@ public class RegisterPage extends AppCompatActivity {
     private String email,password,rePassword,numberPhone,name;
     private int id;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +45,7 @@ public class RegisterPage extends AppCompatActivity {
         passwordEt=findViewById(R.id.passwordLoginId);
         rePasswordEt=findViewById(R.id.rePasswordId);
         numberPhoneEt=findViewById(R.id.phoneId);
+
 reference=FirebaseDatabase.getInstance().getReference("credentiels");
        // mauth=FirebaseAuth.getInstance();
         registerbtn=findViewById(R.id.registerButton) ;
@@ -103,6 +106,7 @@ private void registerUser(){
 }
 
 public void validateNumberPhone(){
+
     reference.addListenerForSingleValueEvent(new ValueEventListener() {
         @Override
         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

@@ -42,8 +42,7 @@ public class ActivityElectric extends AppCompatActivity {
         refrigeratorLn=findViewById(R.id.refrigeratorLnId);
         kitchenLn=findViewById(R.id.kitchenLnId);
         otherElectricLn=findViewById(R.id.otherElectricLnId);
-        user=new User();
-        a = user.getA();
+
         electricToolsExtras = new Bundle();
         electricToolsOtherExtras = new Bundle();
         electricToolsExtras.putString("class","ElectricToolsClass");

@@ -41,7 +41,13 @@ public class ActivityCategory extends AppCompatActivity {
             R.drawable.books_new, R.drawable.awani_new, R.drawable.shoes_new, R.drawable.baby_new, R.drawable.others,
     };
     private DatabaseReference ref;
-
+    @Override
+    public void onBackPressed()
+    {
+        Intent intent=new Intent(this,MainActivity.class);
+        startActivity(intent);
+        super.onBackPressed();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".NewsActivity"></activity>
+        <activity android:name=".AddNews"></activity>
+        <activity android:name=".AdminPanel" />
+        <activity android:name=".NewsActivity" />
         <activity android:name=".jAAMAIYAACTIVITY" />
         <activity android:name=".ContactUsActivity" />
         <activity android:name=".CartDonations" />

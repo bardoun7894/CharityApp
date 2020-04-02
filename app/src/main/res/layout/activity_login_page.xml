@@ -4,19 +4,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:focusableInTouchMode="true"
     android:background="@color/colorPrimary"
+    android:focusableInTouchMode="true"
     tools:context=".LoginPage">
 
     <ImageView
         android:id="@+id/enterId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.557"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordLoginId"
         app:srcCompat="@drawable/login" />
+
+    <TextView
+         android:id="@+id/likeAdminId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/mohammad"
+        android:text=" كأدمن"
+        android:visibility="gone"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/enterId"
+        app:layout_constraintEnd_toEndOf="@+id/enterId"
+        app:layout_constraintHorizontal_bias="0.303"
+        app:layout_constraintStart_toStartOf="@+id/enterId"
+        app:layout_constraintTop_toTopOf="@+id/enterId"
+        app:layout_constraintVertical_bias="0.466">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:layout_marginBottom="8dp"
+        android:text="هل انت أدمن ؟ "
+        android:id="@+id/adminTextId"
+        android:textStyle="bold"
+        android:textColor="#EDEFE3"
+        android:textColorLink="#499CE1"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/enterId"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.901"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordLoginId"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textUserId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" انا لست أدمن ؟ "
+        android:textColor="#EDEFE3"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/enterId"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordLoginId"
+        app:layout_constraintVertical_bias="0.428" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -39,8 +92,8 @@
         android:drawableLeft="@drawable/ic_lock_white_24dp"
         android:hint="                                                        كلمة السر"
         android:inputType="textPassword"
-        android:textColorHint="#F6F6F6"
         android:textColor="#FFFFFF"
+        android:textColorHint="#F6F6F6"
         app:layout_constraintBottom_toTopOf="@+id/rePasswordId"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
@@ -55,7 +108,6 @@
         android:layout_marginTop="344dp"
         android:drawableLeft="@drawable/ic_phone_black_24dp"
         android:ems="10"
-
         android:hint="@string/number_phone"
         android:inputType="number"
         android:textColor="#FFFFFF"
@@ -64,25 +116,43 @@
         app:layout_constraintHorizontal_bias="0.442"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/userLoginId"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="344dp"
+        android:drawableLeft="@drawable/ic_supervisor_account_black_24dp"
+        android:ems="10"
+        android:hint="اسم المستخدم"
+        android:inputType="text"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.442"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterId"
-       >
+        app:layout_constraintTop_toBottomOf="@+id/enterId">
+
         <TextView
             android:id="@+id/RegisterPageTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/create_account"
             android:layout_marginRight="10dp"
+            android:text="@string/create_account"
             android:textColor="#FFEDB5"
             android:textSize="18sp" />
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
