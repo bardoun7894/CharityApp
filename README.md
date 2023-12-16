@@ -12,8 +12,7 @@ Flutter Charity App is an open-source mobile application that connects donors wi
 - User profiles: Create and manage your personal user profile.
 
 ## Screenshots
-
-Include a few screenshots of your app in action here.
+ <img src="https://github.com/bardoun7894/CharityApp/blob/master/33c86afc-53be-4bc0-8762-e722bd9ba79c.png" width="300" >
 
 ## Getting Started
 
